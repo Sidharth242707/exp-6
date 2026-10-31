@@ -1,2 +1,59 @@
 # exp-6
 exp 6
+Algorithm
+1. Create a dictionary with initial key-value pairs.
+2. Access values using keys directly and via the get() method.
+3. Add and modify items by assigning values to keys.
+4. Extract structural data using keys(), values(), and items().
+5. Check key existence using the in keyword.
+6. Remove an element using pop().
+7. Iterate through the dictionary using a loop to print all records
+
+student_details = {
+    "name": "Rahul",
+    "roll_no": 102,
+    "course": "BCA",
+    "marks": 85
+}
+
+print("Student Details:", student_details)
+
+print("Name of Student:", student_details["name"])
+print("Course Name:", student_details.get("course"))
+
+student_details.update({"marks": 92})
+student_details["email"] = "rahul@jain.edu"
+
+print("Updated Student Details:", student_details)
+
+print("All Keys:", list(student_details.keys()))
+print("All Values:", list(student_details.values()))
+print("Dictionary Items:", list(student_details.items()))
+
+if "course" in student_details:
+    print("Course key is present.")
+
+deleted_roll = student_details.pop("roll_no")
+print("Deleted Roll Number:", deleted_roll)
+print("After Removing Roll Number:", student_details)
+
+print("\n--- Student Information ---")
+for item, data in student_details.items():
+    print(f"{item}: {data}")
+
+Student Details: {'name': 'Rahul', 'roll_no': 102, 'course': 'BCA', 'marks': 85}
+Name of Student: Rahul
+Course Name: BCA
+Updated Student Details: {'name': 'Rahul', 'roll_no': 102, 'course': 'BCA', 'marks': 92, 'email': 'rahul@jain.edu'}
+All Keys: ['name', 'roll_no', 'course', 'marks', 'email']
+All Values: ['Rahul', 102, 'BCA', 92, 'rahul@jain.edu']
+Dictionary Items: [('name', 'Rahul'), ('roll_no', 102), ('course', 'BCA'), ('marks', 92), ('email', 'rahul@jain.edu')]
+Course key is present.
+Deleted Roll Number: 102
+After Removing Roll Number: {'name': 'Rahul', 'course': 'BCA', 'marks': 92, 'email': 'rahul@jain.edu'}
+
+--- Student Information ---
+name: Rahul
+course: BCA
+marks: 92
+email: rahul@jain.edu
